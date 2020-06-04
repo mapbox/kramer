@@ -4,14 +4,16 @@ Markdown formatter and linter. Uses [remark-lint][1] plugins and a few other [re
 
 remark &lt;--> kramer (semordnilap, get it?)
 
+![kramer][3]
+
 ## Table of contents
 
-- [Formatting][3]
-- [Linting][4]
-- [Usage][5]
-  - [CLI][6]
-  - [Node API][7]
-- [Workflow ideas][8]
+- [Formatting][4]
+- [Linting][5]
+- [Usage][6]
+  - [CLI][7]
+  - [Node API][8]
+- [Workflow ideas][9]
 
 ## Formatting
 
@@ -58,13 +60,13 @@ Examples
   kramer --format "docs/**/*.md"
 ```
 
-You can also use this package as a remark plugin, in Node code or with [remark-cli][9].
+You can also use this package as a remark plugin, in Node code or with [remark-cli][10].
 
 ### Node API
 
 The `@mapbox/kramer` package also exports `settings` and `plugins` that can be used with [remark][2]'s Node API.
 
-- `settings` is an object of [remark-stringify][10] settings for formatting.
+- `settings` is an object of [remark-stringify][11] settings for formatting.
 - `plugins` is an array of the [remark][2] plugins that kramer uses.
 
 The following example creates a function that reformats Markdown using kramer's rules and plugins.
@@ -101,7 +103,7 @@ async function reformatMarkdown(md) {
 }
 ```
 
-💭💡 Use [husky][11] and [linted-staged][12] to set up a pre-commit hook that automatically lints and formats any Markdown files that are staged for a commit.
+💭💡 Use [husky][12] and [linted-staged][13] to set up a pre-commit hook that automatically lints and formats any Markdown files that are staged for a commit.
 
 ```js
 // In package.json ...
@@ -126,22 +128,24 @@ async function reformatMarkdown(md) {
 
 [2]: https://github.com/wooorm/remark
 
-[3]: #formatting
+[3]: ./art/kramer.jpg
 
-[4]: #linting
+[4]: #formatting
 
-[5]: #usage
+[5]: #linting
 
-[6]: #cli
+[6]: #usage
 
-[7]: #node-api
+[7]: #cli
 
-[8]: #workflow-ideas
+[8]: #node-api
 
-[9]: https://github.com/wooorm/remark/tree/master/packages/remark-cli
+[9]: #workflow-ideas
 
-[10]: https://github.com/remarkjs/remark/tree/master/packages/remark-stringify
+[10]: https://github.com/wooorm/remark/tree/master/packages/remark-cli
 
-[11]: https://github.com/typicode/husky
+[11]: https://github.com/remarkjs/remark/tree/master/packages/remark-stringify
 
-[12]: https://github.com/okonet/lint-staged/
+[12]: https://github.com/typicode/husky
+
+[13]: https://github.com/okonet/lint-staged/
