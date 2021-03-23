@@ -1,34 +1,34 @@
 # kramer
 
-Markdown formatter and linter. Uses [remark-lint][1] plugins and a few other [remark][2] plugins.
+Markdown formatter and linter. Uses [remark-lint](https://github.com/wooorm/remark-lint) plugins and a few other [remark](https://github.com/wooorm/remark) plugins.
 
-remark &lt;--> kramer (semordnilap, get it?)
+remark <--> kramer (semordnilap, get it?)
 
-![kramer][3]
+![kramer](./art/kramer.jpg)
 
 ## Table of contents
 
-- [Formatting][4]
-- [Linting][5]
-- [Usage][6]
-  - [CLI][7]
-  - [Node API][8]
-- [Workflow ideas][9]
+- [Formatting](#formatting)
+- [Linting](#linting)
+- [Usage](#usage)
+  - [CLI](#cli)
+  - [Node API](#node-api)
+- [Workflow ideas](#workflow-ideas)
 
 ## Formatting
 
+- 🥳 A table of contents will be generated if you include a `Table of contents` header in a document, and will include heading levels 1-3.
 - Emphasis and strong are both indicated with `*`.
 - Unordered list items marked with `-`.
 - List items are indented one and only one space beyond the marker.
 - Headings are indicated with `#` signs, e.g. `## Second-level heading`.
-- URLs for links and images are transformed into numbered linked references (footnotes, essentially), to improve legibility.
-- A table of contents will be generated if you include a `Table of contents` header in a document, and will include heading levels 1-3.
+- Linked references for links or images (footnotes, essentially) are transformed into inline URLs.
 - Code blocks are fenced with triple backticks.
 - Some other minor stuff that should be intuitive or prevent mistakes, such as some escaping and encoding.
 
 ## Linting
 
-- Links within the repository (to headings, other files, headings in other files) are validated.
+- 🥳 Links within the repository (to headings, other files, headings in other files) are validated.
 - No duplicate top-level headings.
 - No tabs.
 - Reference definitions are at the end of the file, are not duplicated, and are used.
@@ -60,14 +60,14 @@ Examples
   kramer --format "docs/**/*.md"
 ```
 
-You can also use this package as a remark plugin, in Node code or with [remark-cli][10].
+You can also use this package as a remark plugin, in Node code or with [remark-cli](https://github.com/wooorm/remark/tree/master/packages/remark-cli).
 
 ### Node API
 
-The `@mapbox/kramer` package also exports `settings` and `plugins` that can be used with [remark][2]'s Node API.
+The `@mapbox/kramer` package also exports `settings` and `plugins` that can be used with [remark](https://github.com/wooorm/remark)'s Node API.
 
-- `settings` is an object of [remark-stringify][11] settings for formatting.
-- `plugins` is an array of the [remark][2] plugins that kramer uses.
+- `settings` is an object of [remark-stringify](https://github.com/remarkjs/remark/tree/master/packages/remark-stringify) settings for formatting.
+- `plugins` is an array of the [remark](https://github.com/wooorm/remark) plugins that kramer uses.
 
 The following example creates a function that reformats Markdown using kramer's rules and plugins.
 
@@ -103,7 +103,7 @@ async function reformatMarkdown(md) {
 }
 ```
 
-💭💡 Use [husky][12] and [linted-staged][13] to set up a pre-commit hook that automatically lints and formats any Markdown files that are staged for a commit.
+💭💡 Use [husky](https://github.com/typicode/husky) and [linted-staged](https://github.com/okonet/lint-staged/) to set up a pre-commit hook that automatically lints and formats any Markdown files that are staged for a commit.
 
 ```js
 // In package.json ...
@@ -123,29 +123,3 @@ async function reformatMarkdown(md) {
 ```
 
 💭💡 Whenever you upgrade versions, reformat all your Markdown with `kramer --format`.
-
-[1]: https://github.com/wooorm/remark-lint
-
-[2]: https://github.com/wooorm/remark
-
-[3]: ./art/kramer.jpg
-
-[4]: #formatting
-
-[5]: #linting
-
-[6]: #usage
-
-[7]: #cli
-
-[8]: #node-api
-
-[9]: #workflow-ideas
-
-[10]: https://github.com/wooorm/remark/tree/master/packages/remark-cli
-
-[11]: https://github.com/remarkjs/remark/tree/master/packages/remark-stringify
-
-[12]: https://github.com/typicode/husky
-
-[13]: https://github.com/okonet/lint-staged/
