@@ -1,6 +1,6 @@
 {
   "name": "@mapbox/kramer",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Markdown formatter and linter",
   "main": "index.js",
   "bin": "bin.js",
